@@ -18,7 +18,7 @@ function html() {
  */
 function css() {
     return src('src/**/*.css')
-        .pipe(concat('kasimir-http-request.css'))
+        .pipe(concat('kasimir-tools.css'))
         .pipe(dest('www/dist'))
         .pipe(dest('dist'))
 }
@@ -30,7 +30,7 @@ function js() {
         .pipe(order([
             "src/core/**/*.js"
         ]))
-        .pipe(concat('kasimir-http-request.js'))
+        .pipe(concat('kasimir-tools.js'))
         .pipe(dest('www/dist', { sourcemaps: true }))
         .pipe(dest('dist', { sourcemaps: true }))
         .pipe(minify())
