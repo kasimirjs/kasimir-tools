@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kasimir Templates :: Template instanciation</title>
+    <link rel="stylesheet" href="/dist/docs.css">
+    <link rel="stylesheet" href="/dist/bootstrap.css">
+    <script type="application/javascript" src="/dist/w3codecolor.js"></script>
+    <script type="application/javascript" src="/dist/kasimir-http-request.js"></script>
+    <script type="application/javascript" src="/dist/kasimir-tpl.js"></script>
+</head>
+<body class="container">
+
+    <h2>Routing</h2>
+    <h3>Set options on route</h3>
+    <div id="ex01" class="example">
+        <button onclick="KaRoute.options.state = 'A'">State = A</button>
+        <button onclick="KaRoute.options.state = 'B'">State = B</button>
+        <button onclick="KaRoute.options.state2 = 'D'">State2 = D</button>
+        <button onclick="KaRoute.options.state2 = 'E'">State2 = E</button>
+        <button onclick="KaRoute.options = {state: 'E'}">options = {state: 'val1'}</button>
+        <input type="text" id="out1">
+        <script>
+            KaRoute.onOptionChange("test", options => {
+                document.getElementById("out1").value = JSON.stringify(options);
+                // equals:   document.getElementById("out1").$data = KaRoute.options;
+            });
+            document.getElementById("out1").value = JSON.stringify(KaRoute.options);
+        </script>
+    </div>
+    <pre class="code"><ka-val stmt="document.getElementById('ex01').innerHTML" unindent auto afterrender="w3codecolor(this)"></ka-val></pre>
+
+
+
+
+</body>
+</html>
